@@ -138,7 +138,7 @@ import { parse as parseNote } from './templates/Note';
 import { parse as parseWarning } from './templates/Warning';
 import { parse as parseDeprecated } from './templates/Deprecated';
 import { parse as parseNewFeatureItem } from './templates/NewFeatureItem';
-
+import { parse as parseDoubleBracketLinks } from './templates/DoubleBracketLinks';
 const templateParsers = [
   (text: string) => {
     return parseNewFeatureItem(text);
@@ -154,6 +154,9 @@ const templateParsers = [
   },
   (text: string) => {
     return parseDeprecated(text);
+  },
+  (text: string) => {
+    return parseDoubleBracketLinks(text);
   },
 ];
 
