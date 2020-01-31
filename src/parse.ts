@@ -141,6 +141,9 @@ import { parse as parseNewFeatureItem } from './templates/NewFeatureItem';
 
 const templateParsers = [
   (text: string) => {
+    return parseNewFeatureItem(text);
+  },
+  (text: string) => {
     return parseOOP(text);
   },
   (text: string) => {
@@ -151,9 +154,6 @@ const templateParsers = [
   },
   (text: string) => {
     return parseDeprecated(text);
-  },
-  (text: string) => {
-    return parseNewFeatureItem(text);
   },
 ];
 

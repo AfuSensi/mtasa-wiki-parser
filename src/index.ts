@@ -13,3 +13,10 @@ export class MTAWikiParser {
     return results;
   }
 }
+
+// import util from "util"
+// async function test() {
+//   const e = await MTAWikiParser.fetch("isElementWaitingForGroundToLoad")
+//   console.log(util.inspect(e, false, null, true /* enable colors */))
+// }
+// test()
