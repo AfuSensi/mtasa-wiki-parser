@@ -5,7 +5,7 @@
 4. Description
 */
 // {{New feature/item|3.0140|1.4.0|6715|This function checks whether MTA has frozen an element because it is above map objects which are still loading or not.}}
-// Output: Deprecated = "Use ${2} instead"
+// Output: This function checks whether MTA has frozen an element because it is above map objects which are still loading or not.
 
 const REGEX: RegExp = /{{New feature\/item\|.*?\|.*?\|.*?\|(.*?)}}/g;
 
