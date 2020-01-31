@@ -137,6 +137,7 @@ import { parse as parseOOP } from './templates/OOP';
 import { parse as parseNote } from './templates/Note';
 import { parse as parseWarning } from './templates/Warning';
 import { parse as parseDeprecated } from './templates/Deprecated';
+import { parse as parseNewFeatureItem } from './templates/NewFeatureItem';
 
 const templateParsers = [
   (text: string) => {
@@ -151,6 +152,9 @@ const templateParsers = [
   (text: string) => {
     return parseDeprecated(text);
   },
+  (text: string) => {
+    return parseNewFeatureItem(text);
+  },
 ];
 
 function parseTemplates(text: string): string {
@@ -161,7 +165,7 @@ function parseTemplates(text: string): string {
 }
 
 function removeTemplates(text: string): string {
-  return text.replace(/\{\{(.*?)\}\}/g, '');
+  return text.replace(/{{[\s\S]+?}}/g, '');
 }
 
 function replaceStyling(text: string): string {

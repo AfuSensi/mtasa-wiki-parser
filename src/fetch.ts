@@ -24,12 +24,6 @@ export interface IFetchedSection {
 }
 
 export class Fetcher {
-  // private userAgent: string = 'mtasa-wiki-parser @ https://github.com/AfuSensi/mtasa-wiki-parser';
-
-  // constructor(userAgent?: string) {
-  //   this.userAgent = userAgent || this.userAgent;
-  // }
-  //   : Promise<IFetchedArticle>
   static async fetch(query: string, userAgent?: string) {
     query = encodeURI(query.replace(/\s+/g, '_')); // Convert space to _ and encode
     const res: AxiosResponse = await axios.get('https://wiki.multitheftauto.com/api.php', {
@@ -82,7 +76,6 @@ export class Fetcher {
       image: imageUrl,
       rawText: res.data.parse.wikitext['*'],
     };
-
     return fetchedArticle;
   }
   static async getImageUrl(imageName: string, userAgent?: string): Promise<string | false> {
