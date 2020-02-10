@@ -133,7 +133,7 @@ function parseParagraphs(text: string): IParsedParagraph[] {
 }
 
 // Templates parse
-import { parse as parseOOP } from './templates/OOP';
+import { parse as parseOOP } from './templates/oopTemplate';
 import { parse as parseNote } from './templates/Note';
 import { parse as parseWarning } from './templates/Warning';
 import { parse as parseDeprecated } from './templates/Deprecated';
