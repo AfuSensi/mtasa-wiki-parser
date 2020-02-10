@@ -17,7 +17,7 @@
 // }}
 
 const REGEX: RegExp = /{{New feature\/item\|(.*?)}}/g;
-const REGEX2: RegExp = /{{New items\|(.*?)}}/g;
+const REGEX2: RegExp = /{{New items\|([\s\S]{0,}?)}}/g;
 export function parse(input: string): string {
   // Parse template
   input = input.replace(REGEX, (match, p1: string) => {
