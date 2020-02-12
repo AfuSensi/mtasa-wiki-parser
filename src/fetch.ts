@@ -63,7 +63,10 @@ export class Fetcher {
     // Sections
     const sections: IFetchedSection[] = [];
     res.data.parse.sections.forEach((element: IFetchedSection) => {
-      sections.push(element);
+      // Check if index is NaN, to ignore template indexes that start with prefix T-
+      if (!isNaN(element.index)) {
+        sections.push(element);
+      }
     });
 
     const fetchedArticle: IFetchedArticle = {
