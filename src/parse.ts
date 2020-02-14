@@ -76,10 +76,10 @@ function parseSections(text: string, sections: IFetchedSection[]) {
   return parsedSections;
 }
 
-let yo = 0;
+
 function parseParagraphs(text: string): IParsedParagraph[] {
   const paragraphs: IParsedParagraph[] = [];
-  yo++;
+
   // Remove first line
   text = text.substring(text.indexOf('\n') + 1);
   // Remove magic words
@@ -139,7 +139,11 @@ import { parse as parseWarning } from './templates/Warning';
 import { parse as parseDeprecated } from './templates/Deprecated';
 import { parse as parseNewFeatureItem } from './templates/NewFeatureItem';
 import { parse as parseDoubleBracketLinks } from './templates/DoubleBracketLinks';
+import { parse as parseHtmlComments } from './templates/HtmlComments';
 const templateParsers = [
+  (text: string) => {
+    return parseHtmlComments(text);
+  },
   (text: string) => {
     return parseNewFeatureItem(text);
   },
