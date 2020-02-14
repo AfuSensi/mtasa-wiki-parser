@@ -76,7 +76,6 @@ function parseSections(text: string, sections: IFetchedSection[]) {
   return parsedSections;
 }
 
-
 function parseParagraphs(text: string): IParsedParagraph[] {
   const paragraphs: IParsedParagraph[] = [];
 
